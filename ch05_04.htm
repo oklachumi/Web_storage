@@ -4,21 +4,23 @@
 <title>ch05_04</title>  
 <link rel=stylesheet type="text/css" href="color.css">
 <script type="text/javascript">
-function sendok(){	
-	if(userid.value!="" && userpwd.value!=""){		
-		localStorage.userid=userid.value;
-		sessionStorage.userpwd=userpwd.value;
+
+function sendok() {	
+	if (userid.value!="" && userpwd.value!="") {		
+		localStorage.userid = userid.value;
+		sessionStorage.userpwd = userpwd.value;
 		return true;
-	}else{
-		alert("請輸入帳號");
+	} else {
+		alert ("請輸入帳號");
 		return false;
 	}
 }
 
-function isload(){
-if(localStorage.userid)
-	userid.value=localStorage.userid;
+function isload() {
+	if (localStorage.userid)
+		userid.value = localStorage.userid;
 }
+
 </script> 
 </head> 
 <body onload="isload()">
@@ -27,10 +29,11 @@ if(localStorage.userid)
 	請輸入您的帳號：<br />
 	<input type="text" id="userid" value="" autofocus><br />
 	請輸入您的密碼：<br />
-	<input type="password" id="userpwd" value=""><br /><font style="font-size:12px">
-	(測試帳號：guest 密碼:1234)</font><br />
-	<input id="btn_send" type="submit" value="送出"><br />	
+	<input type="password" id="userpwd" value=""><br />
+	<font style="font-size:12px">
+	(測試帳號：guest 密碼:1234)
+	</font><br />	
+	<input type="submit" id="btn_send" value="送出"><br />
 </form>
-</body> 
-</body> 
+</body>
 </html>
