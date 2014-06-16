@@ -1,0 +1,35 @@
+<!doctype html> 
+<html> 
+<head> 
+<title>ch05_01</title>  
+<link rel=stylesheet type="text/css" href="color.css">
+<script type="text/javascript"> 
+function isLoad() { 
+	if (typeof(Storage)=="undefined")
+	{
+		alert("Sorry!!您的瀏覽器不支援Web Storage");		
+	} else {		
+		btn_save.addEventListener("click", saveToLocalStorage);
+		btn_load.addEventListener("click", loadFromLocalStorage); 
+	}
+}
+
+function saveToLocalStorage() {
+	localStorage.username = inputname.value;
+}
+
+function loadFromLocalStorage() {		
+	show_LocalStorage.innerHTML = localStorage.username + " 您好~歡迎來到我的網站~";
+}
+</script> 
+</head> 
+<body> 
+<body onload="isLoad()"> 
+<img src="images/welcome.jpg" /><br />
+	請輸入您的姓名：<input type="text" id="inputname" value=""><br />  
+	<div id="show_LocalStorage"></div><br />
+	<button id="btn_save">儲存至local storage</button> 
+	<button id="btn_load">從local storage讀取資料</button> 
+</body> 
+</body> 
+</html>
